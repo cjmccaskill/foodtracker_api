@@ -4,5 +4,5 @@ from django.db import models
 class Tracker(models.Model):
     title = models.CharField(max_length=100)
     image = models.CharField(max_length=500)
-    quantity = models.CharField(max_length=25)
+    servings = models.CharField(max_length=25)
     calories = models.CharField(max_length=25)
