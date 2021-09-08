@@ -5,4 +5,4 @@ from rest_framework import serializers
 class TrackerSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tracker
-        fields = ['id', 'title', 'quantity', 'calories']
+        fields = ['id', 'title', 'image', 'quantity', 'calories']
