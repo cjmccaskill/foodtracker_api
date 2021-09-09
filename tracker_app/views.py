@@ -10,14 +10,15 @@ class TrackerViewSet(viewsets.ModelViewSet):
     queryset = Tracker.objects.all()
     serializer_class = TrackerSerializer
     permission_classes = [permissions.IsAuthenticated]
-    authentication_classes = (authentication.JWTAuthentication)
+    authentication_classes = (authentication.JWTAuthentication,)
 
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.AllowAny]
 
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
+    authentication_classes = (authentication.JWTAuthentication,)
