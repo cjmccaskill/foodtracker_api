@@ -83,10 +83,15 @@ WSGI_APPLICATION = 'foodtracker_api.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'USER': 'test',
-        'PASSWORD': 'test',
+        'NAME': BASE_DIR / 'db.sqlite3'
     }
+}
+
+# JWT Authenticator
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 
 
